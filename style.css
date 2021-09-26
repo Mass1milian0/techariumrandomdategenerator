@@ -1,0 +1,23 @@
+body{
+    background-color: #0A0C1B;
+}
+.a{
+    margin-top: 10%;
+    display: flex;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+img{
+    width: 200;
+    height: 200;
+}
+p{
+    color: white;
+    font-size: large;
+    margin-top: 20;
+}
