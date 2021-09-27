@@ -1,14 +1,12 @@
 function randomIntFromInterval(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
-function randomDate() {
+function ranDate() {
   let today = new Date()
-  let date = new Date(randomIntFromInterval(today.getFullYear(),today.getFullYear()+20),randomIntFromInterval(today.getMonth(),11),randomIntFromInterval(today.getDay,30));
-  return date;
+  return new Date(randomIntFromInterval(today.getFullYear(), today.getFullYear() + 1), Math.min(randomIntFromInterval(today.getMonth() + 1, 11), 11), randomIntFromInterval(0,29), 0, 0, 0, 0);
 }
 
 let p = document.createElement("p")
-let randDate = randomDate()
-let today = date()
-p.innerText = randDate.getFullYear() + "/" + (randDate.getMonth() +1 ) + "/" + (randDate.getDay() + 1)
+let randDate = ranDate()
+p.innerText = randDate.getFullYear() + "/" + (randDate.getMonth() +1 ) + "/" + (randDate.getDate() + 1)
 document.querySelector("#appendafter").appendChild(p)
