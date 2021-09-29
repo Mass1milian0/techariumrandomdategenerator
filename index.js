@@ -3,7 +3,14 @@ function randomIntFromInterval(min, max) { // min and max included
 }
 function ranDate() {
   let today = new Date()
-  return new Date(randomIntFromInterval(today.getFullYear(), today.getFullYear() + 1), Math.min(randomIntFromInterval(today.getMonth() + 1, 11), 11), randomIntFromInterval(0,29), 0, 0, 0, 0);
+  let randYear = randomIntFromInterval(today.getFullYear(), today.getFullYear() + 1)
+  
+  if (randYear > today.getFullYear()) {
+    var month = 0
+  } else {
+    var month = today.getMonth() + 1
+  }
+  return new Date(randYear, Math.min(randomIntFromInterval(month, 11), 11), randomIntFromInterval(0,29), 0, 0, 0, 0);
 }
 
 let p = document.createElement("p")
